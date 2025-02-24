@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "f6283f95-e1ca-4ab6-a144-5e33a84492f8",
+		"name": "Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11861517"
+	},
+	"item": [
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta/100",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta/100",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"{\r",
+									"    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": 585545,\r\n    \"saldoInicial\": 1000.0,\r\n    \"ptEstadoCuenta\": {\r\n        \"idEstadoCuenta\": 1\r\n    },\r\n    \"ptTipoCuenta\": {\r\n        \"idTipoCuenta\": 2\r\n    },\r\n    \"ptCliente\": {\r\n        \"identificador\": \"1002712857\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"numeroCuenta\": 200,\r\n        \"saldoInicial\": 860,\r\n        \"ptEstadoCuenta\": {\r\n            \"idEstadoCuenta\": 1,\r\n            \"nombreEstadoCuenta\": \"Activa\"\r\n        },\r\n        \"ptTipoCuenta\": {\r\n            \"idTipoCuenta\": 2\r\n        },\r\n        \"ptCliente\": {\r\n            \"identificador\": \"1002712857\"\r\n\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovimientos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCuenta/reporte/2002712858?fechaInicial=2021-08-01&fechaFinal=2025-02-24",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCuenta",
+								"reporte",
+								"2002712858"
+							],
+							"query": [
+								{
+									"key": "fechaInicial",
+									"value": "2021-08-01"
+								},
+								{
+									"key": "fechaFinal",
+									"value": "2025-02-24"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptMovimientos",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptMovimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptMovimientos/1",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptMovimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaMovimiento\": \"2025-02-24\",\r\n    \"valorMovimiento\": -540,\r\n    \"idTipoMovimiento\": 2,\r\n    \"ptCuenta\": {\r\n        \"numeroCuenta\": 496825\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptMovimientos",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptMovimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "GetPtCliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCliente",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostPtCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n        \"identificador\": \"1002719991\",\r\n        \"nombre\": \"CECILIA PAEZ\",\r\n        \"genero\": \"femenino\",\r\n        \"edad\": 31,\r\n        \"direccion\": \"vallidare y marca\",\r\n        \"telefono\": \"0999956782\",\r\n        \"contraseniaCliente\": \"456\",\r\n        \"estadoCliente\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCliente",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByIdentificador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{servidor}}:{{puerto}}/api/v1/ptCliente/1002712857",
+							"protocol": "http",
+							"host": [
+								"{{servidor}}"
+							],
+							"port": "{{puerto}}",
+							"path": [
+								"api",
+								"v1",
+								"ptCliente",
+								"1002712857"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
